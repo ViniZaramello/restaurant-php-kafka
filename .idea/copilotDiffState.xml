@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/Application/Service/CommandBus.php">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Application/Service/CommandBus.php" />
+              <option name="originalContent" value="&lt;?php&#10;&#10;namespace App\Application\Service;&#10;&#10;use App\Application\Command\CommandHandler;&#10;use App\Application\Ports\Inbound\CommandBusInterface;&#10;use App\Application\Ports\Inbound\CommandHandlerInterface;&#10;&#10;class CommandBus implements CommandBusInterface&#10;{&#10;    private array $handlers = [];&#10;&#10;    public function registerHandler(string $commandClass, CommandHandlerInterface $handler): void&#10;    {&#10;        $this-&gt;handlers[$commandClass] = $handler;&#10;    }&#10;&#10;    public function dispatch(CommandHandler $command): mixed&#10;    {&#10;        $commandClass = get_class($command);&#10;&#10;        if (!isset($this-&gt;handlers[$commandClass])) {&#10;            throw new \RuntimeException(&quot;No handler registered for command: {$commandClass}&quot;);&#10;        }&#10;&#10;        return $this-&gt;handlers[$commandClass]-&gt;handle($command);&#10;    }&#10;}&#10;" />
+              <option name="updatedContent" value="&lt;?php&#10;&#10;namespace App\Application\Service;&#10;&#10;use App\Application\Command\CommandHandler;&#10;use App\Application\Ports\Inbound\CommandBusInterface;&#10;use App\Application\Ports\Inbound\CommandHandlerInterface;&#10;&#10;class CommandBus implements CommandBusInterface&#10;{&#10;    private array $handlers = [];&#10;&#10;    public function registerHandler(string $commandClass, CommandHandlerInterface $handler): void&#10;    {&#10;        $this-&gt;handlers[$commandClass] = $handler;&#10;    }&#10;&#10;    public function dispatch(CommandHandler $command): mixed&#10;    {&#10;        $commandClass = get_class($command);&#10;&#10;        if (!isset($this-&gt;handlers[$commandClass])) {&#10;            throw new \RuntimeException(&quot;No handler registered for command: {$commandClass}&quot;);&#10;        }&#10;&#10;        return $this-&gt;handlers[$commandClass]-&gt;handle($command);&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ../src/Driver/
+        namespace: App\Driver\Http
+    type: attribute
