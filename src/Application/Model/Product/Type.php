@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application\Model\Item;
+namespace App\Application\Model\Product;
 
 enum Type: string
 {

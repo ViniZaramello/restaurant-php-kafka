@@ -13,7 +13,9 @@
         "symfony/framework-bundle": "6.4.*",
         "symfony/runtime": "6.4.*",
         "symfony/yaml": "6.4.*",
-        "reamsey/uuid": "*"
+        "reamsey/uuid": "*",
+        "ext-pdo": "*",
+      "ext-http": "*"
     },
     "require-dev": {
     },

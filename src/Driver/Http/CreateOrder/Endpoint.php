@@ -2,15 +2,25 @@
 
 namespace App\Driver\Http\CreateOrder;
 
+use App\Application\Command\CommandHandler;
+use App\Application\Ports\Inbound\CommandBusInterface;
+use App\Application\Service\CommandBus;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class Endpoint extends AbstractController
+final class Endpoint extends AbstractController
 {
-    #[Route('/hello', name: 'hello_get', methods: ['GET'])]
-    public function example(): Response
+    #[Route('/order/create', name: 'createOrder_post', methods: ['POST'])]
+    public function __invoke(
+        Request $request,
+        CommandBusInterface $commandBus = new CommandBus,
+    ): Response
     {
-        return new Response('Hello from GET endpoint!');
+        $command = $request->toCommand();
+        $orderId = $commandBus->dispatch($command);
+
+        return new Response("Order ID: $orderId");
+
     }
 }

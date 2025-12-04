@@ -22,3 +22,5 @@
 [ ] - Criar docker-compose
 
 [ ] - Criar testes
+
+[ ] - Padronizar mensagens de erro e de retorno
